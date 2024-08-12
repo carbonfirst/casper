@@ -81,9 +81,9 @@ class Deployer:
                         'port':8080}
 
         registry = {
-                    "username": "casperumass",
-                    "password": "dckr_pat_S1IeaRVaExnJfJTFJRcxu4TbVp8",
-                    "email": "bchakrabarty@umass.edu",
+                    "username": "USERNAME",
+                    "password": "PASSWORD",
+                    "email": "YOUR@EMAIL.COM",
                     "registry": "https://index.docker.io/v1/"
                     }
 
