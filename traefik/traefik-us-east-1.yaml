@@ -1,0 +1,29 @@
+## Static configuration
+entryPoints:
+  web:
+   address: "192.168.245.71:3004"
+  metrics:
+    address: "192.168.245.71:4004"
+
+api:
+  dashboard: true
+
+metrics:
+  prometheus:
+    entryPoint: metrics
+    addEntryPointsLabels: true
+    addRoutersLabels: true
+    addServicesLabels: true
+
+# Writing Logs to a File, in JSON
+log:
+  filePath: "/nfs/obelix/users2/sjasoria/kasper/traefik/traefik_logs.txt"
+  format: json
+  level: DEBUG
+
+providers:
+  # Enable the file provider to define routers / middlewares / services in file
+  file:
+    filename: /nfs/obelix/users2/sjasoria/kasper/traefik/traefik_dynamic.yaml
+    watch: true
+

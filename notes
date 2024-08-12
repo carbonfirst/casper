@@ -1,0 +1,33 @@
+Python
+
+https://sebgoa.medium.com/kubernetes-scheduling-in-python-3588f4928b13
+
+https://sysdig.com/blog/kubernetes-scheduler/
+
+https://github.com/AsaadMe/hybrid-kube-scheduler/blob/master/hybridscheduler/scheduler.py
+
+https://github.com/topics/kubernetes-scheduler
+
+https://www.velotio.com/engineering-blog/kubernetes-python-client
+https://github.com/kubernetes-client/python/tree/master/kubernetes
+
+https://github.com/kube-flux/kube-flux
+
+Promestheus:
+
+https://sysdig.com/blog/kubernetes-monitoring-prometheus/
+
+https://martinheinz.dev/blog/73
+
+
+Run Kiwix: docker run -d -p 8080:8080 -v ~/Desktop/casper/Zim:/data kiwix/kiwix-serve:latest --library library.xml
+
+docker run -d -v ~/casper/Zim/:/data kiwix/kiwix-tools:latest kiwix-manage /data/library.xml add /data/wikipedia_en_100_mini_2023-03.zim
+
+
+https://github.com/kiwix/kiwix-tools/issues/402
+
+(base) username@master_node casper % kubectl logs kiwix-serve-5d777f9754-wwxzd --all-containers
+/usr/local/bin/kiwix-serve --port=8080 wikipedia_en_100_mini_2023-03.zim
+Unable to add the ZIM file 'wikipedia_en_100_mini_2023-03.zim' to the internal library.
+Here is the content of /data:

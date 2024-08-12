@@ -1,0 +1,22 @@
+[servers.sample]
+bind = "192.168.245.71:3000"
+protocol = "tcp" 
+balance = "weight"
+
+max_connections = 10000
+client_idle_timeout = "10m"
+backend_idle_timeout = "10m"
+backend_connection_timeout = "2s"
+debug = true
+
+[api]
+enabled = true  # true | false
+bind = "192.168.245.71:3001"  # bind host:port
+ 
+[servers.sample.discovery]
+kind = "exec"         # (required)
+failpolicy = "keeplast" # (optional) "keeplast" | "setempty" - what to do with backends if discovery fails
+interval = "20s"         # (required) backends cache invalidation interval; 0 means never.
+timeout = "5s"          # (optional) max time to wait for discover until falling to failpolicy
+exec_command = ["/nfs/obelix/users2/sjasoria/kasper/gobetween/config/update_weights_python.py"] # (required) command to exec and variable-length arguments
+http = true

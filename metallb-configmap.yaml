@@ -1,0 +1,16 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: kiwix-pool
+  namespace: metallb-system
+spec:
+  addresses:
+  - 192.168.245.71-192.168.245.71
+  - 192.168.245.74-192.168.245.75
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: kiwix-pool
+  namespace: metallb-system
+

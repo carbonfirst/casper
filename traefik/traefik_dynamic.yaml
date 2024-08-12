@@ -1,0 +1,47 @@
+http:
+  routers:
+    router0:
+      entryPoints:
+      - web
+      rule: Path(`/`)
+      service: app
+  services:
+    ap-southeast-2:
+      loadBalancer:
+        servers:
+        - url: http://192.168.245.75:30001
+    app:
+      weighted:
+        services:
+        - name: ap-southeast-2
+          weight: '6'
+        - name: eu-central-1
+          weight: '0'
+        - name: eu-west-3
+          weight: '64'
+        - name: us-east-1
+          weight: '24'
+        - name: us-east-2
+          weight: '0'
+        - name: us-west-1
+          weight: '4'
+    eu-central-1:
+      loadBalancer:
+        servers:
+        - url: http://192.168.245.71:30002
+    eu-west-3:
+      loadBalancer:
+        servers:
+        - url: http://192.168.245.71:30003
+    us-east-1:
+      loadBalancer:
+        servers:
+        - url: http://192.168.245.74:30004
+    us-east-2:
+      loadBalancer:
+        servers:
+        - url: http://192.168.245.74:30005
+    us-west-1:
+      loadBalancer:
+        servers:
+        - url: http://192.168.245.75:30006
